@@ -1,6 +1,6 @@
 
 import './App.css'
-import React from 'react';
+import React, { useEffect } from 'react';
 import WeatherForecastSection from './components/WeatherForecastSection'
 import WorldWeatherForecastSection from './components/WorldWeatherForcastSection';
 import WeatherNewsSection from './components/WeatherNewsSection';
@@ -13,18 +13,18 @@ import { AvoidWeatherSurprise } from './components/AvoidWeatherSurprise';
 import useWeather from './contextapi/WeatherContext';
 
 const Home = () => {
-  const { weatherData } = useWeather();
+  const { defaultWeatherData } = useWeather();
+
+
   return (
-    <div className='bg-slate-800 relative'>
-      <Header />
-      <HeroSection weatherData={weatherData}/>
-      <WeatherForecastSection weatherData={weatherData}/>
-      <WorldWeatherForecastSection weatherData={weatherData}/>
+    <div className='bg-slate-800 relative w-full'>
+      <HeroSection weatherData={defaultWeatherData} />
+      <WeatherForecastSection weatherData={defaultWeatherData} />
+      <WorldWeatherForecastSection weatherData={defaultWeatherData} />
       <WeatherNewsSection />
       <AvoidWeatherSurprise />
       {/* <OurStory /> */}
       <NewsletterSection />
-      <Footer />
     </div>)
 };
 

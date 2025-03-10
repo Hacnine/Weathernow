@@ -6,7 +6,7 @@ import WeatherDay from './WeatherDay';
 const WeatherWidget = ({ weatherData, city, temperature, conditions, sunrise, sunset, humidity, windSpeed, bgcolor, bgcolor2 }) => 
     (
 
-    <div className={`max-w-xs mx-auto ${bgcolor} text-white p-6 rounded-2xl shadow-lg`}>
+    <div className={` ${bgcolor} text-white p-6 rounded-2xl shadow-lg`}>
         <div className="text-center flex items-center justify-center gap-3">
             <BiSun className=' text-amber-300 text-5xl' />
             <div className="text-2xl font-bold capitalize"><p>{city}</p><div className="text-lg">{conditions}</div> </div>

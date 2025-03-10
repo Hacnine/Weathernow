@@ -1,7 +1,7 @@
 import React from 'react';
 
 const NewsletterSection = () => (
-  <section className="flex flex-col items-center justify-center p-8 animate-fadeIn text-gray-300">
+  <section className=" max-w-[85%] mx-auto flex flex-col items-center justify-center py-8 animate-fadeIn text-gray-300">
     <div className="w-full md:w-2/3 text-center">
       <h2 className="text-2xl md:text-4xl font-bold mb-4">Get the fresh weather forecast daily</h2>
       <p className="mb-4">

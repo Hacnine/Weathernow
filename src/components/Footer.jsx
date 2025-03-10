@@ -1,8 +1,8 @@
 import React from 'react';
 
 const Footer = () => (
-  <footer className="bg-gray-800 text-white py-8">
-    <div className="container mx-auto px-4">
+  <footer className="bg-gray-900  text-white py-8">
+    <div className=" max-w-[85%] mx-auto  px-4">
       <div className="flex flex-wrap">
         <div className="w-full md:w-1/3 text-center md:text-left mb-8 md:mb-0">
           <a href="">
@@ -34,7 +34,7 @@ const Footer = () => (
             </a>
           </div>
         </div>
-       <div className="flex items-center justify-end w-full md:w-1/3">
+       <div className="flex items-center md:justify-end justify-center w-full md:w-1/3">
        <div className=" text-center md:text-left">
           <h2 className="text-xl font-bold mb-4">Contacts</h2>
           <h3 className="font-semibold">General:</h3>

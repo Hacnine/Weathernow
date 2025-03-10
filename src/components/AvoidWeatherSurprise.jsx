@@ -2,7 +2,7 @@ import React from 'react'
 import WeatherWidget from './WeatherWidget';
 
 export const AvoidWeatherSurprise = () => (
-    <section className="flex flex-col md:flex-row items-center justify-between p-8 text-gray-300 animate-fadeIn pb-14 ">
+    <section className=" max-w-[85%] mx-auto flex flex-col md:flex-row items-center justify-between py-8 text-gray-300 animate-fadeIn pb-14 ">
         <div className="md:w-1/2 animate-fadeInLeft">
             <h2 className="text-2xl md:text-4xl font-bold mb-4">Avoid weather surprises</h2>
             <p className="mb-4">Weathernow provides a road trip planner tool with accurate weather forecast information to optimize travel plans.</p>

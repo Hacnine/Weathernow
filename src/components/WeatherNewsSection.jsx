@@ -2,7 +2,7 @@ import React from 'react';
 
 const WeatherNewsSection = () => (
     <>
-        <section className="flex flex-col md:flex-row items-center justify-between p-8   text-gray-300 animate-fadeIn">
+        <section className=" max-w-[85%] mx-auto flex flex-col md:flex-row items-center justify-between py-8   text-gray-300 animate-fadeIn">
             <div className="md:w-1/2">
                 <h2 className="text-2xl md:text-4xl font-bold mb-4">
                     Weather forecast news
@@ -20,9 +20,9 @@ const WeatherNewsSection = () => (
             </div>
         </section>
 
-        <section className="p-8 animate-fadeIn">
+        <section className="p-8 ">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
-                <div className="flex flex-col items-center  pl-7">
+                <div className="flex flex-col items-center  md:ml-20">
                     <NewsCard
                         title="Climate change: Facing Earth’s greatest challenge"
                         date="May 30, 2023"
@@ -31,7 +31,7 @@ const WeatherNewsSection = () => (
                         link="https://ld-wp73.template-help.com/wordpress/prod_33356/v1/2023/05/30/lorem-ipsum-dolor-sit-amet-consectetur-12/"
                     />
                 </div>
-                <div className="flex flex-col items-center ">
+                <div className="flex flex-col items-center  ">
                     <NewsCard
                         title="Wildfires burn in Colorado and Texas"
                         date="May 30, 2023"
