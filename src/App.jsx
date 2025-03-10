@@ -23,7 +23,7 @@ const App = () => (
     <AvoidWeatherSurprise/>
      {/* <OurStory /> */}
      <NewsletterSection />
-   
+    <Footer />
   </div>
 );
 
