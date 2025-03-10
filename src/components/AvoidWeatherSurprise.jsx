@@ -1,5 +1,5 @@
 import React from 'react'
-import WeatherWidget2 from './WeatherWidget2';
+import WeatherWidget from './WeatherWidget';
 
 export const AvoidWeatherSurprise = () => (
     <section className="flex flex-col md:flex-row items-center justify-between p-8 text-gray-300 animate-fadeIn pb-14 ">
@@ -16,7 +16,7 @@ export const AvoidWeatherSurprise = () => (
 
 
             <div className=" absolute  left-20 top-20">
-            <WeatherWidget2 city={"Tokyo"} temperature={"4"} conditions={"Light rain"} sunrise={"06:01 AM"} sunset={"05:44 PM"} humidity={"81%"} windSpeed={"18.7Km/h"} bgcolor="bg-[#5aafa4]" country="Japan" />
+            <WeatherWidget city={"Tokyo"} temperature={"4"} conditions={"Light rain"} sunrise={"06:01 AM"} sunset={"05:44 PM"} humidity={"81%"} windSpeed={"18.7Km/h"} bgcolor="bg-[#5aafa4]" country="Japan" />
             </div>
         </div>
     </section>

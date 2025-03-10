@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import WeatherWidget from './WeatherWidget2';
+import WeatherWidget from './WeatherWidget';
 import { BsSearch } from 'react-icons/bs';
 
 const HeroSection = () => {

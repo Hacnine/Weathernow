@@ -3,7 +3,7 @@ import { BiSun } from 'react-icons/bi';
 import { WiDaySunny, WiCloud, WiRaindrop, WiStrongWind, WiSunrise, WiSunset } from 'react-icons/wi';
 import WeatherDay from './WeatherDay';
 
-const WeatherWidget2 = ({ weatherData, city, temperature, conditions, sunrise, sunset, humidity, windSpeed, bgcolor, bgcolor2 }) => 
+const WeatherWidget = ({ weatherData, city, temperature, conditions, sunrise, sunset, humidity, windSpeed, bgcolor, bgcolor2 }) => 
     (
 
     <div className={`max-w-xs mx-auto ${bgcolor} text-white p-6 rounded-2xl shadow-lg`}>
@@ -55,7 +55,7 @@ const WeatherWidget2 = ({ weatherData, city, temperature, conditions, sunrise, s
     </div>
 );
 
-export default WeatherWidget2
+export default WeatherWidget
 
 
 
