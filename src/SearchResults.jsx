@@ -5,26 +5,25 @@ import "leaflet/dist/leaflet.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import useWeather from './contextapi/WeatherContext';
 import { BsSearch } from "react-icons/bs";
+import WeatherWidget from "./components/WeatherWidget";
 
 const SearchResults = () => {
     const location = useLocation();
-    const ref = useRef();
-    useEffect(() => {
-        if (ref.current) {
-            ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-    }, []);
-
-    const [city2, setCity2] = useState('');
+    const ref = useRef()
     const navigate = useNavigate();
+    const { weatherData, fetchWeather, setCity, city, hourlyData, weeklyData, cityCoordinates, loading, fetchWeatherData, defaultWeatherData } = useWeather();
+    const [city2, setCity2] = useState('');
+    const [city3, setCity3] = useState('');
 
     const handleSearch = (event) => {
         event.preventDefault();
         if (city2.trim() !== "") {
             navigate(`/search?city=${city2}`);
+        } else if (city.trim() !== "") {
+            navigate(`/search?city=${city}`);
         }
-    }
-    const { weatherData, fetchWeather, setCity, city, hourlyData, weeklyData, cityCoordinates, loading, fetchWeatherData } = useWeather();
+    };
+    
 
     useEffect(() => {
         // Extract city from URL when component mounts
@@ -32,14 +31,20 @@ const SearchResults = () => {
         const extractedCity = params.get("city");
         if (extractedCity) {
             setCity(extractedCity);
+            setCity3(extractedCity);
         }
     }, [location.search, setCity]);
 
     useEffect(() => {
+        if(city3){
+            console.log()
+            fetchWeather(city3);
+        }
         if (city) {
             fetchWeatherData(city);
+            
         }
-    }, [city, fetchWeatherData]);
+    }, [city, city3]);
 
     if (loading) {
         return <div className="bg-slate-800 min-w-screen min-h-screen flex items-center justify-center">
@@ -66,7 +71,24 @@ const SearchResults = () => {
                                 <BsSearch className="text-sm size-7 " />
                             </button>
                         </form>
-                        <span className=" text-2xl pt-10">Showing result of <span className="capitalize">{city} :</span></span>
+                        <div className=" flex items-start md:justify-between md:flex-row justify-center flex-col">
+                            <span className=" text-2xl pb-10">Showing result of <span className="capitalize">{city} :</span></span>
+
+                            {/* {cod: '404', message: 'city not found'} */}
+                            <div className="md:-mt-16 md:w-fit w-full">
+                            {defaultWeatherData.cod!=='404' ? <WeatherWidget
+                                city={defaultWeatherData.name}
+                                temperature={defaultWeatherData.main.temp}
+                                conditions={defaultWeatherData.weather[0].description}
+                                sunrise={new Date(defaultWeatherData.sys.sunrise * 1000).toLocaleTimeString()}
+                                sunset={new Date(defaultWeatherData.sys.sunset * 1000).toLocaleTimeString()}
+                                humidity={defaultWeatherData.main.humidity}
+                                windSpeed={defaultWeatherData.wind.speed}
+                                bgcolor={'bg-[#2fc8eb]'}
+                                bgcolor2={"bg-blue-900/10"}
+                            /> : null}
+                            </div>
+                        </div>
                     </div>
 
 
@@ -74,9 +96,9 @@ const SearchResults = () => {
             </section>
 
             {weatherData.message === "city not found" ?
-                <div className=" bg-slate-800 text-gray-300 flex items-center justify-center h-[200px] font-semibold text-5xl">No City Found</div>
+                <div className=" bg-slate-800 text-gray-300 flex items-center justify-center h-[200px] font-semibold text-5xl ">No City Found</div>
                 :
-                <div className=" bg-slate-800 text-gray-300 pb-20" ref={ref}>
+                <div className="pt-64 bg-slate-800 text-gray-300 pb-20 md:pt-24" ref={ref}>
                     <div className=" max-w-[85%] mx-auto font-sans ">
                         <div className="flex items-center md:justify-between md:flex-row justify-center flex-col">
                             {/* Map Section */}
@@ -88,7 +110,7 @@ const SearchResults = () => {
                                     <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
                                 </MapContainer>
                             </div>
-                            <div className="md:w-2/3 lg:pl-0 pl-10 w-full md:mt-0 mt-20">
+                            <div className="md:w-2/3 lg:pl-0 md:pl-10 w-full md:mt-0 mt-20">
 
                                 {/* Top Section */}
                                 <div className="flex justify-between items-center pb-7">
@@ -101,7 +123,7 @@ const SearchResults = () => {
 
 
                                 {/* Hourly Forecast */}
-                                <div className="">
+                                <div className="w-full">
                                     <h2 className="text-xl font-semibold">Hourly forecast</h2>
                                     <div className="w-full h-40  mt-4  flex items-center justify-center">
                                         <ResponsiveContainer width="100%" className={"bg-slate-950 rounded-md"} height={350}>

@@ -1,6 +1,6 @@
 
 import './App.css'
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import WeatherForecastSection from './components/WeatherForecastSection'
 import WorldWeatherForecastSection from './components/WorldWeatherForcastSection';
 import WeatherNewsSection from './components/WeatherNewsSection';
@@ -11,9 +11,33 @@ import HeroSection from './components/Hero';
 import Header from './components/Header';
 import { AvoidWeatherSurprise } from './components/AvoidWeatherSurprise';
 import useWeather from './contextapi/WeatherContext';
+import { useLocation } from 'react-router';
 
 const Home = () => {
-  const { defaultWeatherData } = useWeather();
+  const [city, setCity] = useState("")
+  const location = useLocation();
+
+  const { fetchWeather,defaultWeatherData } = useWeather();
+      // useEffect(() => {
+      //     // Extract city from URL when component mounts
+      //     const params = new URLSearchParams(location.search);
+      //     const extractedCity = params.get("city");
+      //     if (extractedCity) {
+      //         setCity(extractedCity);
+      //     }
+      // }, [location.search, setCity]);
+
+  useEffect(() => {
+    fetchWeather("dhaka");
+  }, [city, fetchWeather]);
+  // If the city is not found, fetch the weather for Dhaka automatically
+  useEffect(() => {
+    if (defaultWeatherData?.cod === "404") {
+      setCity("Dhaka");
+      fetchWeather("Dhaka");  // Call fetchWeather to get Dhaka's weather
+    }
+
+  }, [defaultWeatherData]);
 
 
   return (

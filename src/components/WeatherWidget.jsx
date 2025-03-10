@@ -3,15 +3,15 @@ import { BiSun } from 'react-icons/bi';
 import { WiDaySunny, WiCloud, WiRaindrop, WiStrongWind, WiSunrise, WiSunset } from 'react-icons/wi';
 import WeatherDay from './WeatherDay';
 
-const WeatherWidget = ({ weatherData, city, temperature, conditions, sunrise, sunset, humidity, windSpeed, bgcolor, bgcolor2 }) => 
-    (
+const WeatherWidget = ({ weatherData, city, temperature, conditions, sunrise, sunset, humidity, windSpeed, bgcolor, bgcolor2 }) =>
+(
 
     <div className={` ${bgcolor} text-white p-6 rounded-2xl shadow-lg`}>
         <div className="text-center flex items-center justify-center gap-3">
             <BiSun className=' text-amber-300 text-5xl' />
             <div className="text-2xl font-bold capitalize"><p>{city}</p><div className="text-lg">{conditions}</div> </div>
 
-            <div className="text-[46px] font-semibold mt-2">{temperature}°</div>
+            <div className="text-[46px] font-semibold mt-2">{Math.round(temperature)}°</div>
         </div>
         <div className={` ${bgcolor2} p-4  rounded-lg mt-4 flex justify-center gap-6 text-sm`}>
             <div className="">

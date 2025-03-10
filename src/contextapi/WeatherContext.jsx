@@ -80,9 +80,7 @@ export const WeatherProvider = ({ children }) => {
     }
   }, [apiKey]);
 
-  useEffect(() => {
-    fetchWeather("dhaka");
-  }, [city, fetchWeather]);
+
 
   return (
     <WeatherContext.Provider value={{
