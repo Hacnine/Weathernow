@@ -62,7 +62,7 @@ const SearchResults = () => {
                         <form onSubmit={handleSearch} className="flex items-center gap-0.5  mb-4">
                             <input
                                 type="text"
-                                className="p-2 w-1/2 mt-4 bg-gray-700 rounded-l-full outline-none px-4 ring-gray-700 focus:border-0"
+                                className="p-2 md:w-1/2 w-full mt-4 bg-gray-700 rounded-l-full outline-none px-4 ring-gray-700 focus:border-0"
                                 placeholder="Enter city name..."
                                 value={city2}
                                 onChange={(e) => setCity2(e.target.value)}
