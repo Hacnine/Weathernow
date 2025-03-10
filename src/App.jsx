@@ -17,7 +17,9 @@ const App = () => (
   <div className='bg-slate-800 relative'>
     <Header />
     <HeroSection />
- 
+    <WeatherForecastSection />
+  
+    <Footer />
   </div>
 );
 
