@@ -9,7 +9,7 @@ import NewsletterSection from './components/NewsLetter';
 import Footer from './components/Footer';
 import HeroSection from './components/Hero';
 import Header from './components/Header';
-import { AvoiWeatherSurprise } from './components/AvoidWeatherSurprise';
+import { AvoidWeatherSurprise } from './components/AvoidWeatherSurprise';
 
 
 
@@ -20,6 +20,7 @@ const App = () => (
     <WeatherForecastSection />
     <WorldWeatherForecastSection />
     <WeatherNewsSection />
+    <AvoidWeatherSurprise/>
   
     <Footer />
   </div>
