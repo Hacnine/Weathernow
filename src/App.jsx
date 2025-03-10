@@ -21,8 +21,9 @@ const App = () => (
     <WorldWeatherForecastSection />
     <WeatherNewsSection />
     <AvoidWeatherSurprise/>
-  
-    <Footer />
+     {/* <OurStory /> */}
+     <NewsletterSection />
+   
   </div>
 );
 
