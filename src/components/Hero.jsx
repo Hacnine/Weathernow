@@ -3,21 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import WeatherWidget from './WeatherWidget';
 import { BsSearch } from 'react-icons/bs';
 
-const HeroSection = () => {
-  const [weatherData, setWeatherData] = useState(null);
-  const [city, setCity] = useState('dhaka');
-  const apiKey = "0cae9690544d21d158d36e65e5dabcd4";
+const HeroSection = ({weatherData}) => {
+  const [city, setCity] = useState('');
   const navigate = useNavigate();
-
-  const fetchWeather = async (cityName) => {
-    try {
-      const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`);
-      const data = await response.json();
-      setWeatherData(data);
-    } catch (error) {
-      console.error('Error fetching weather data:', error);
-    }
-  };
 
   const handleSearch = (event) => {
     event.preventDefault();
@@ -26,9 +14,6 @@ const HeroSection = () => {
     }
   };
 
-  useEffect(() => {
-    fetchWeather('dhaka');
-  }, []);
 
   return (
     <section className="flex flex-col md:flex-row items-center justify-between p-8 bg-[url(/src/assets/background/sunset.jpg)] py-32 text-white">
