@@ -1,16 +1,16 @@
 import { BiSun } from 'react-icons/bi';
 
 export const countryies = [
-    { name: "tashkent", img: "/public/uzbekistan.png" },
-    { name: "moscow", img: "/public/russia.png" },
-    { name: "warsaw", img: "/public/poland.png" },
-    { name: "rome", img: "/public/italy.png" },
-    { name: "budapest", img: "/public/hungray.png" },
-    { name: "berlin", img: "/public/germany.png" },
-    { name: "sofia", img: "/public/bulgaria.png" },
-    { name: "sofia", img: "/public/bulgaria.png" },
-    { name: "dhaka", img: "/public/bangladesh.png" },
-    // {name:"", img:"/public/"},
+    { name: "tashkent", img: "/uzbekistan.png" },
+    { name: "moscow", img: "/russia.png" },
+    { name: "warsaw", img: "/poland.png" },
+    { name: "rome", img: "/italy.png" },
+    { name: "budapest", img: "/hungray.png" },
+    { name: "berlin", img: "/germany.png" },
+    { name: "sofia", img: "/bulgaria.png" },
+    { name: "sofia", img: "/bulgaria.png" },
+    { name: "dhaka", img: "/bangladesh.png" },
+    // {name:"", img:"/"},
 ]
 
 
