@@ -23,8 +23,8 @@ Weathernow is a weather application developed primarily using JavaScript. The go
 
 ## Livepreview
 **Visit this site**:
-    ```Live https://weathernowwhat.netlify.app/
-    ```
+[Live]( https://weathernowwhat.netlify.app/)
+
 
 ## Installation
 
