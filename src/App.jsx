@@ -18,6 +18,8 @@ const App = () => (
     <Header />
     <HeroSection />
     <WeatherForecastSection />
+    <WorldWeatherForecastSection />
+    <WeatherNewsSection />
   
     <Footer />
   </div>
