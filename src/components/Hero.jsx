@@ -19,8 +19,8 @@ const HeroSection = ({ weatherData }) => {
     <section className=" p-8 bg-[url(/src/assets/background/sunset.jpg)] py-32 text-white ">
       <div className="flex flex-col md:flex-row items-center justify-between md:max-w-[85%] mx-auto">
         <div className="md:w-1/2 ">
-          <h1 className="text-3xl md:text-5xl font-bold mb-4">Weather forecasts for thousands of locations around the world</h1>
-          <form onSubmit={handleSearch} className="flex items-center gap-1 mb-4">
+          <h1 className="text-3xl md:text-5xl font-bold mb-4 tracking-wider line-clamp-4">Weather forecasts for thousands of locations around the world.</h1>
+          <form onSubmit={handleSearch} className="pt-4 flex items-center gap-1 mb-4">
             <input
               type="text"
               className="p-2 w-full bg-gray-700 rounded-l-full outline-none px-4 ring-gray-700 focus:border-0"

@@ -53,17 +53,17 @@ const SearchResults = () => {
             <section className=" p-8 bg-[url(/search.jpg)] bg-bottom py-32 text-white ">
                 <div className="flex flex-col md:flex-row items-start justify-between md:max-w-[85%] mx-auto h-[250px]">
                     <div className=" ">
-                        <h1 className="text-3xl md:text-5xl font-bold mb-4">Weather forecasts for thousands of locations around the world</h1>
-                        <form onSubmit={handleSearch} className="flex items-center gap-0.5 mb-4">
+                        <h1 className="text-3xl tracking-widest  md:text-5xl font-bold mb-4">Weather forecasts for thousands of locations around the world.</h1>
+                        <form onSubmit={handleSearch} className="flex items-center gap-0.5  mb-4">
                             <input
                                 type="text"
-                                className="p-2 w-1/2 bg-gray-700 rounded-l-full outline-none px-4 ring-gray-700 focus:border-0"
+                                className="p-2 w-1/2 mt-4 bg-gray-700 rounded-l-full outline-none px-4 ring-gray-700 focus:border-0"
                                 placeholder="Enter city name..."
                                 value={city2}
                                 onChange={(e) => setCity2(e.target.value)}
                             />
-                            <button type="submit" className="py-1.5 px-4 bg-gray-700 cursor-pointer  rounded-r-full">
-                                <BsSearch className="text-sm size-7" />
+                            <button type="submit" className="py-1.5 mt-4 px-4 bg-gray-700 cursor-pointer  rounded-r-full">
+                                <BsSearch className="text-sm size-7 " />
                             </button>
                         </form>
                         <span className=" text-2xl pt-10">Showing result of <span className="capitalize">{city} :</span></span>

@@ -16,7 +16,7 @@ const WorldWeatherForecastSection = () => {
                 <h2 className="text-2xl md:text-4xl  font-bold mb-4">
                     World Weather Forecast
                 </h2>
-                <p>Please select a country</p>
+                <p>Please select a city</p>
             </div>
             <div className="md:w-1/2 mt-8 md:mt-0">
                 <div className="flex justify-end">
@@ -48,7 +48,7 @@ const ServiceCard = ({ title, img, link }) => (
                 </h3>
             </div>
             <a className="elementor-button elementor-size-md flex items-center" href={link}>
-                <span className="mr-2 text-sm">Learn more</span>
+                <span className="mr-2 text-sm">Search Now</span>
                 <RiExternalLinkFill/>
             </a>
         </div>
