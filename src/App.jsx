@@ -1,30 +1,14 @@
-
-import './App.css'
 import React from 'react';
-import WeatherForecastSection from './components/WeatherForecastSection'
-import WorldWeatherForecastSection from './components/WorldWeatherForcastSection';
-import WeatherNewsSection from './components/WeatherNewsSection';
-import OurStory from './components/OurStory';
-import NewsletterSection from './components/NewsLetter';
-import Footer from './components/Footer';
-import HeroSection from './components/Hero';
-import Header from './components/Header';
-import { AvoidWeatherSurprise } from './components/AvoidWeatherSurprise';
-
-
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import Home from './Home';
 
 const App = () => (
-  <div className='bg-slate-800 relative'>
-    <Header />
-    <HeroSection />
-    <WeatherForecastSection />
-    <WorldWeatherForecastSection />
-    <WeatherNewsSection />
-    <AvoidWeatherSurprise/>
-     {/* <OurStory /> */}
-     <NewsletterSection />
-    <Footer />
-  </div>
+  <Router>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/search" element={<SearchResults />} />
+    </Routes>
+  </Router>
 );
 
 export default App;

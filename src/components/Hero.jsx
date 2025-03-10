@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from 'react'
-import WeatherWidget from './WeatherWidget2'
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import WeatherWidget from './WeatherWidget2';
 import { BsSearch } from 'react-icons/bs';
 
 const HeroSection = () => {
   const [weatherData, setWeatherData] = useState(null);
   const [city, setCity] = useState('dhaka');
-  const [query, setQuery] = useState("")
-  const apiKey = "0cae9690544d21d158d36e65e5dabcd4"
+  const apiKey = "0cae9690544d21d158d36e65e5dabcd4";
+  const navigate = useNavigate();
+
   const fetchWeather = async (cityName) => {
     try {
       const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`);
@@ -19,11 +21,13 @@ const HeroSection = () => {
 
   const handleSearch = (event) => {
     event.preventDefault();
-    setQuery(city);
+    if (city.trim() !== "") {
+      navigate(`/search?city=${city}`); 
+    }
   };
 
   useEffect(() => {
-    fetchWeather('dhaka')
+    fetchWeather('dhaka');
   }, []);
 
   return (
@@ -38,8 +42,9 @@ const HeroSection = () => {
             value={city}
             onChange={(e) => setCity(e.target.value)}
           />
-
-          <button type="submit" className="p-2 bg-gray-700 rounded-r-md"><BsSearch className=' text-xl size-7' /></button>
+          <button type="submit" className="p-2 bg-gray-700 rounded-r-md">
+            <BsSearch className="text-xl size-7" />
+          </button>
         </form>
       </div>
 
@@ -57,10 +62,10 @@ const HeroSection = () => {
             bgcolor2={"bg-blue-900/10"}
           />
         )}
-
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default HeroSection
+export default HeroSection;
+
